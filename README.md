@@ -16,6 +16,6 @@
 > 반응형 UI.
 
 > 사용한 기술
-HTML
-CSS
-Vanila Javascript
+> HTML
+> CSS
+> Vanila Javascript
