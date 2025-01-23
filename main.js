@@ -20,64 +20,73 @@ let gameOver = false;
 let chanceArea = document.getElementById("chance-area")
 let history = []
 
-playButton.addEventListener("click", play)  // addEventListener(이벤트명, 이벤트 발생시 실행 함수) > click 이벤트 발생 + play 함수 실행
+playButton.addEventListener("click", play)  //addEventListener(이벤트명, 이벤트 발생시 실행 함수) > click 이벤트 발생 + play 함수 실행
 resetButton.addEventListener("click", reset)
 userInput.addEventListener("focus", function(){userInput.value=""}) //익명의 함수를 사용 > 함수 자체에 내용이 없고, 무엇보다도 userInput에서 잠깐 쓰고 종료되는 함수이므로 구지 함수명을 선언하지 않아도 됌(선언하면 메모리 차지되기 때문)
 
 function pickRandomNum() {
     computerNum = Math.floor(Math.random() * 100); //0~1 사이에 있는 소수점으로 떨어짐 > 곱하기 100 > Math.floor 사용해서 소수점 이하 숫자를 제거
-    console.log("정답: ", computerNum);
+    console.log("정답: ", computerNum); //확인용
 }
 
 function play() {   //이 함수를 playButton을 눌렀을 때, play라는 함수를 실행되도록 매개변수로 넘김 > play() X, play O
     let userValue = userInput.value;
     
+    //입력값 유효성 검사
     if (userValue < 1 || userValue > 100) {
         resultText.textContent ="1과 100사이 숫자를 입력해 주세요."
         return;
     }
 
+    //이미 입력한 숫자 확인
     if (history.includes(userValue)) {
         document.getElementById('result-area').querySelector('.main-img').src = '/img/stupid.gif';
         resultText.textContent = "이미 입력한 숫자입니다. 다른 숫자를 입력해 주세요."
         return;
     }
 
+    //게임 종료 상태 확인
+    if (gameOver) {
+        return;
+    }
+
     chances--;
     chanceArea.textContent = `남은 기회: ${chances}번`;
-    console.log("chance", chances)
+    console.log("chance", chances)  //확인용
 
-    if (userValue < computerNum) {
+    //정답 비교
+    if (parseInt(userValue) < computerNum) {
         document.getElementById('result-area').querySelector('.main-img').src = '/img/up.gif';
         //resultArea.textContent = "Up!!!!"
         //console.log("Up!!!")
-    } else if (userValue > computerNum) {
+    } else if (parseInt(userValue) > computerNum) {
         document.getElementById('result-area').querySelector('.main-img').src = '/img/down.gif';
         //resultArea.textContent = "Down!!!!"
         //console.log("Down!!!")
-    } else if (userValue == computerNum) {
+    } else {
         document.getElementById('result-area').querySelector('.main-img').src = '/img/lucky guy.jpg';
         resultText.textContent = "정답입니다!!!"
         playButton.disabled = true;
+        gameOver = true;
+        return;
         //console.log("맞추셨습니다!!!")
     }
 
+    //입력 기록 추가
     history.push(userValue)
     console.log(history)
 
+    //기회 소진 확인
     if(chances < 1) {
         gameOver = true
-    }
-
-    if(gameOver == true) {
         playButton.disabled = true;
         document.getElementById('result-area').querySelector('.main-img').src = '/img/pang.png'
         resultText.textContent = "기회를 모두 사용했습니다."
     }
+
 }
 
 function reset() {
-    //user input창이 깨끗하게 정리
     userInput.value = "";
 
     //새로운 번호 생성
