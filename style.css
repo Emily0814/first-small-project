@@ -1,0 +1,49 @@
+.main-img {
+    width: 400px;
+    height: 250px;
+}
+
+@font-face {
+    font-family: 'MyCustomFont'; /* 폰트의 이름 */
+    src: url('fonts/a옛날목욕탕B.ttf') format('truetype'),
+         url('fonts/a옛날목욕탕L.ttf') format('truetype'),
+         url('fonts/a옛날목욕탕M.ttf') format('truetype');
+}
+
+body {
+    font-family: 'MyCustomFont', sans-serif;
+}
+
+.result-text {
+    font-family: 'MyCustomFont', sans-serif;
+}
+
+body {
+    background-image: url(img/Waikiki\ Brothers.jpg);
+    /* background-size: 100% auto; */
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container {
+    border: 10px solid gray;
+    border-radius: .5rem;
+    text-align: center;
+    background-color: rgba(247, 243, 242, 0.7);
+    width: 100%;
+    padding: 30px 15px;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 200px;
+    height: 90px;
+}
+
+.title, #chance-area, .main-img {
+    margin: 30px 0;
+}
+
