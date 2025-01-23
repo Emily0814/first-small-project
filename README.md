@@ -1,6 +1,6 @@
 #🔢숫자 맞추기 게임🔢
 ![image](https://github.com/user-attachments/assets/24cc1809-4b57-4097-bcce-559b7b98aa44)
-## 술게임 Up Down에서 영감을 받은 프로젝트입니다.
+#### 🍺 술게임 Up Down에서 영감을 받은 프로젝트입니다.
 
 ## 기능
 - 컴퓨터는 게임이 시작할때 랜덤한 숫자를 뽑는다.
