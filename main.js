@@ -15,7 +15,7 @@ let resultArea = document.getElementById("result-area");
 let resultText = document.querySelector('#result-area #result-text');
 let mainImg = document.getElementById('result-area').querySelector('.main-img');
 let resetButton = document.getElementById("reset-button");
-let chances = 6;
+let chances = 3;
 let gameOver = false;
 let chanceArea = document.getElementById("chance-area")
 let history = []
@@ -97,7 +97,7 @@ function reset() {
     resultText.textContent = "숫자를 맞추면 지상 최대의 낙원 하와이 여행권을 얻을 수 있습니다"
     
     //남은 기회와 기회 상태 초기화
-    chances = 6;  
+    chances = 3;  
     chanceArea.textContent = `남은 기회: ${chances}번`;  
 
     //게임 오버 상태 초기화
