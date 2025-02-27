@@ -1,5 +1,6 @@
 # 🔢숫자 맞추기 게임🔢
-![image](https://github.com/user-attachments/assets/24cc1809-4b57-4097-bcce-559b7b98aa44)
+![image](https://github.com/user-attachments/assets/c9d97982-7d71-43c1-954c-007cd4b602fc)
+
 #### 🍺 술게임 Up Down에서 영감을 받은 프로젝트입니다.
 
 ## 기능
